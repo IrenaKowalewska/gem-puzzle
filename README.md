@@ -2,7 +2,7 @@
 
 ![](https://github.com/IrenaKowalewska/gem-puzzle/blob/main/src/assets/gem-puzzle.png)
 
-[Deploy gem-puzzle](https://mauta.github.io/gem-puzzle/gem-puzzle/public/) 
+[Deploy gem-puzzle](https://irenakowalewska-gem-puzzle.netlify.app/) 
 
 ## Задание
 Вам нужно реализовать классическую игру [пятнашки](https://ru.wikipedia.org/wiki/Игра_в_15)
