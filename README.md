@@ -1,6 +1,6 @@
 ## Task [RS School](https://rs.school/) Gem-puzzle 
 
-![]()
+![](https://github.com/IrenaKowalewska/gem-puzzle/blob/main/src/assets/gem-puzzle.png)
 
 [Deploy gem-puzzle](https://mauta.github.io/gem-puzzle/gem-puzzle/public/) 
 
