@@ -145,7 +145,7 @@ const changeFadeShowField = () => {
   time.classList.toggle('fade');
   startNewGame.classList.toggle('fade');
   scoreButton.classList.toggle('fade');
-  clearButton.classList.toggle('fade');
+  // clearButton.classList.toggle('fade');
 };
 
 function setLocalStorage(saveStorage) {
@@ -283,12 +283,14 @@ scoreButton.addEventListener('click', () => {
       <button class="close-btn">X</button>
       <h3>Лучшие результаты игры:</h3>`;
   scoreInfo.style.display = "flex";
+  clearButton.classList.toggle('fade');
   scoreInfo.appendChild(getLocalStorage());
   scoreButton.disabled = true;
   const closeButton = document.querySelector('.close-btn');
   closeButton.addEventListener('click', () => {
     scoreInfo.style.display = "none";
     scoreButton.disabled = false;
+    clearButton.classList.toggle('fade');
   });
 
 });
