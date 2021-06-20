@@ -62,12 +62,12 @@ clearButton.innerHTML = 'Clear results';
 scoreInfo.classList.add('score-info');
 buttonsWrapper.classList.add('buttons-wrapper');
 rules.classList.add('rules');
-rules.innerHTML = `Правила игры:
-  Игра представляет собой набор одинаковых квадратных костяшек с нанесёнными числами, 
-  заключённых в квадратную коробку. Длина стороны коробки в четыре раза больше длины 
-  стороны костяшек для набора из 15 элементов, соответственно в коробке остаётся 
-  незаполненным одно квадратное поле. Цель игры — перемещая костяшки по коробке, 
-  добиться упорядочивания их по номерам, желательно сделав как можно меньше перемещений.`;
+rules.innerHTML = `<div>Правила игры:
+Игра представляет собой набор одинаковых квадратных костяшек с нанесёнными числами, 
+заключённых в квадратную коробку. Длина стороны коробки в четыре раза больше длины 
+стороны костяшек для набора из 15 элементов, соответственно в коробке остаётся 
+незаполненным одно квадратное поле. Цель игры — перемещая костяшки по коробке, 
+добиться упорядочивания их по номерам, желательно сделав как можно меньше перемещений.</div>`;
 endGameBlock.classList.add('fade', 'block-end-game');
 
 document.body.appendChild(endGameBlock);
@@ -82,6 +82,7 @@ infoWrapper.appendChild(startNewGame);
 infoWrapper.appendChild(time);
 buttonsWrapper.appendChild(rules);
 buttonsWrapper.appendChild(createSelectButtons(fieldConfig.length));
+
 
 const gameButtons = document.querySelectorAll('.game-button');
 
@@ -201,7 +202,7 @@ function moveCell(index, divider) {
     });
     setLocalStorage(saveStorage);
     setTimeout(showResult, 0);
-    setTimeout(fadeResult, 2000);
+    setTimeout(fadeResult, 4000);
     clearField();
     changeFadeShowField();
     timeStop = true;
@@ -278,9 +279,18 @@ gameButtons.forEach((btn, index) => {
 });
 
 scoreButton.addEventListener('click', () => {
-  scoreInfo.innerHTML = 'Лучшие результаты игры:';
+  scoreInfo.innerHTML = `
+      <button class="close-btn">X</button>
+      <h3>Лучшие результаты игры:</h3>`;
+  scoreInfo.style.display = "flex";
   scoreInfo.appendChild(getLocalStorage());
   scoreButton.disabled = true;
+  const closeButton = document.querySelector('.close-btn');
+  closeButton.addEventListener('click', () => {
+    scoreInfo.style.display = "none";
+    scoreButton.disabled = false;
+  });
+
 });
 
 clearButton.addEventListener('click', () => {
